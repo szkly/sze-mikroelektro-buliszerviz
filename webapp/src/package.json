@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "scripts": {
+    "build:css_dev": "npx tailwindcss -i ./static/src/input.css -o ./static/dist/css/output.css --watch",
+    "build:css": "npx tailwindcss -i ./static/src/input.css -o ./static/dist/css/output.css",
+    "flask:debug": ". ../venv/bin/activate && flask --debug run",
+    "flask": ". ../venv/bin/activate && flask run",
+    "cf": "cloudflared tunnel run --url localhost:5000 buliszerviz",
+    "dev": "npm run cf & npm run build:css_dev & npm run flask:debug",
+    "prod": "npm run cf & npm run build:css && npm run flask"
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %} - 🎉 Buliszerviz</title>
+  </head>
+
+  <body>
+    <header class="min-w-full h-28 md:h-36 bg-brand-dark flex items-center justify-between px-8">
+      <a href="{{ url_for('index') }}" class="flex items-center">
+        <img src="{{url_for('static',filename='images/logo.svg')}}" class="w-16 h-16 md:w-24 md:h-24" />
+        <h1 class="text-4xl md:text-6xl text-accent ml-6">Buliszerviz</h1>
+      </a>
+
+      <a class="text-xl text-white hover:text-accent transition-colors" href="{{ url_for('stats') }}">Statisztika</a>
+    </header>
+
+    {% block content %} {% endblock %} 
+    
+    {% block scripts %} {% endblock %}
+  </body>
+</html>

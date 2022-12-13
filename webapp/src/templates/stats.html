@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+
+{% block title %} Statisztika {% endblock %}
+
+{% block content %}
+<main
+  class="min-w-full h-[calc(100vh-7rem)] md:h-[calc(100vh-9rem)] bg-brand-light flex flex-col md:justify-center items-center px-8 py-16 relative"
+> 
+  <div class="flex justify-center w-full xl:w-9/12 h-full xl:h-9/12">
+      <canvas id="chart-statistics"></canvas>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{url_for('static',filename='src/stats.js')}}"></script>
+{% endblock %}
